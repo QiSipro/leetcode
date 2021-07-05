@@ -5,5 +5,6 @@ public class Main {
         System.out.println("Zhang SiQI!");
         System.out.println("Try it Again!");
         System.out.println("新添加一句话试一试在提交");
+        System.out.println("再改变一行试试");
     }
 }
