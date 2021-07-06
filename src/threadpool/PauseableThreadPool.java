@@ -1,6 +1,5 @@
 package threadpool;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
