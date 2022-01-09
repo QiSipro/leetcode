@@ -5,6 +5,7 @@ public class Solutioni876 {
     /**
      * 使用快慢指针，因为要找中间节点，所以快指针前进两步，慢指针前进一步，两倍关系
      * 同理可推，1/3,1/4处的节点
+     *
      * @param head
      * @return
      */
@@ -35,9 +36,9 @@ public class Solutioni876 {
         int n = 0;
         // 指向中间节点
         int i = 1;
-        while(k != null){
+        while (k != null) {
             n++;
-            while(i < n/2 + 1){
+            while (i < n / 2 + 1) {
                 // 向后移动
                 j = j.next;
                 i++;
@@ -46,11 +47,21 @@ public class Solutioni876 {
         }
         return j;
     }
+
     class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-  }
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
 }
