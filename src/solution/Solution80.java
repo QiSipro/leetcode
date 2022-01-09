@@ -25,9 +25,10 @@ public class Solution80 {
         int i = 1;
         // i 小于 非0个数且从0 开始填入，j指向非0数
         for (int j = 2; j < nums.length; j++) {
-            if (nums[i] != nums[j] || nums[i] != nums[i-1])
+            // 如果前一个没有保存同样的也可以存入  如果前一个一样，说明已经放入两个一样的
+            if (nums[i] != nums[j] || nums[i] != nums[i - 1])
                 nums[++i] = nums[j];
         }
-        return i+1;
+        return i + 1;
     }
 }

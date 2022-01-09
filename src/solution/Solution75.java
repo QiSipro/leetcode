@@ -35,11 +35,11 @@ public class Solution75 {
         int zero = -1;
         int two = nums.length;
         int tmp = -1;
-        for (int i = 0; i < two; ) {
+        for (int i = 0; i < two; ) {  //保证不超过 2 在的位置
             if (nums[i] == 0) {
                 tmp = nums[i];
-                nums[i++] = nums[++zero];
-                nums[zero] = tmp;
+                nums[i++] = nums[++zero];  // 将zero 的下一个数 放到当前i的位置，
+                nums[zero] = tmp;          // 将取到的0 放到zero的位置
             } else if (nums[i] == 2) {
                 tmp = nums[i];
                 nums[i] = nums[--two];

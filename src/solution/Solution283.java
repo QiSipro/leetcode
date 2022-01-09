@@ -16,15 +16,19 @@ public class Solution283 {
     }
 
     static public void moveZeroes(int[] nums) {
-        int i = 0,j = 0;
+        int i = 0,j = 0, tmp;
         // i 小于 非0个数且从0 开始填入，j指向非0数
         while (j < nums.length) {
-            if (nums[j] != 0)
-                nums[i++] = nums[j];
+            if (nums[j] != 0){
+                if(i != j) {
+                    tmp = nums[i];
+                    nums[i++] = nums[j];
+                    nums[j] = tmp;
+                }else{
+                    i ++;
+                }
+            }
             j++;
-        }
-        for (; i < nums.length; i++) {
-            nums[i] = 0;
         }
 
         System.out.println(Arrays.toString(nums));

@@ -19,7 +19,7 @@ public class Solution19 {
             h = h.next;
         }
 
-        ListNode listNode = removeNthFromEnd(head, 1);
+        ListNode listNode = removeNthFromEnd_1ms(head, 1);
         while (listNode != null) {
             System.out.print(listNode.val + ",");
             listNode = listNode.next;
@@ -36,13 +36,13 @@ public class Solution19 {
         }
     }
 
-    static public ListNode removeNthFromEnd(ListNode head, int n) {
+    static public ListNode removeNthFromEnd_1ms(ListNode head, int n) {
         // 加个头节点省事
         ListNode node = new ListNode(0);
         node.next = head;
         ListNode p = node;
         ListNode q = node;
-        // q 移动 n 个提前量
+        // q 移动 n 个提前量  最多移动到最后一个节点
         while (n-- > 0 && q.next != null) q = q.next;
         // 一起移动
         while (q.next != null) {
@@ -51,5 +51,29 @@ public class Solution19 {
         }
         p.next = p.next.next;
         return node.next;
+    }
+    static public ListNode removeNthFromEnd_0ms(ListNode head, int n) {
+        // n == 1且只有一个节点
+        if((n == 1 && head.next == null) || head == null) {
+            return null;
+        }
+        ListNode j = head;
+        ListNode i = head;
+        int k = n;
+        // 如果 n 大于链表长度 j == null
+        while(k-- > 0 && j != null){
+            j = j.next;
+        }
+        //说明n > 链表长度，删掉头节点
+        if(j == null) {
+            return head.next;
+        }
+        // 向后移动
+        while(j.next != null){
+            i = i.next;
+            j = j.next;
+        }
+        i.next = i.next.next;
+        return head;
     }
 }

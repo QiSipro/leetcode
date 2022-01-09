@@ -23,7 +23,7 @@ public class Solution26 {
 
     static public int removeDuplicates(int[] nums) {
         int i = 0;
-        // i 小于 非0个数且从0 开始填入，j指向非0数
+        // i j 间隔1 同时前进， i 停留在重复的第一个， j停留在下一个非重复值
         for (int j = 1; j < nums.length; j++) {
             if (nums[i] != nums[j])
                 nums[++i] = nums[j];

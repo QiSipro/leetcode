@@ -19,7 +19,7 @@ public class Solution27 {
     static public int removeElement(int[] nums, int val) {
 
         int i = 0;
-        // i 小于 非0个数且从0 开始填入，j指向非0数
+        // i 与 j 同时前进，会停在val处 ，j指向非val数 放到 i 处
         for (int j = 0; j < nums.length; j++) {
             if (nums[j] != val)
                 nums[i++] = nums[j];
